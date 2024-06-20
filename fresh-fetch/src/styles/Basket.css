@@ -6,99 +6,115 @@
 :root {
     --font-family-base: 'Inter', Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
     --font-family-title: Newsreader, Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
-    --font-size-small: 4vw;
-    --font-size-medium: 15vw;
-    --font-size-large: 9vw;
+    --font-size-large: clamp(20px, 2vw + 1rem, 70px);
+    --font-size-small: clamp(12px, 2vw + .2rem, 22px);
     --font-weight-regular: 400;
     --font-weight-bold: 700;
+
+
     --primary-green: #426B1F;
     --primary-black: #000000;
     --primary-white: #FFFFFF;
-    --vendor-color: #6D6D6D;
+    --vendor-color: #6D6D6D; /* The color of the vendor text on eachorder/produce component */
     --dark-gray: #5C5959;
     --light-gray: #6D6D6D;
-    --produce-background: #FAFAF5;
+    --produce-background: #FAFAF5; /* the bg-color for produce components */
     --border-color: #E6E6E6;
+
+    --button-width: clamp(85px, 30%, 130px); /* The width of the order-all and cancel-all buttons */
+    --button-height: clamp(40px, 10vw, 64px); /* The height of the order-all and cancel-all buttons */
+    --button-font-size: clamp(14px, 2vw + .5rem, 20px); /* The height of the order-all and cancel-all buttons */
 }
 
-.basket-header {
-    margin-inline: 9vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
+/* The header specific to the basket page
+  ==================================== */
+    .basket-header {
+        margin-inline: 9vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
 
-.basket-header .basket-logo {
-    display: flex;
-    align-items: center;
-    line-height: .9;
-}
+    .basket-header .basket-logo {
+        display: flex;
+        align-items: center;
+        line-height: .9;
+    }
 
-.basket-header .basket-logo img {
-    margin-top: 13px;
-    width: 30%;
-    height: 30%;
-}
+    .basket-header .basket-logo img {
+        margin-top: 13px;
+        width: 30%;
+        height: 30%;
+    }
 
-.basket-header .basket-logo .basket-logo-text h2 {
-    margin-bottom: 0;
-    font-family: var(--font-family-title);
-    font-weight: var(--font-weight-regular);
-}
+    .basket-header .basket-logo .basket-logo-text h2 {
+        margin-bottom: 0;
+        font-family: var(--font-family-title);
+        font-weight: var(--font-weight-regular);
+        font-size: var(--font-size-large);
+    }
 
-.basket-header .basket-logo .basket-logo-text .item-count {
-    margin-top: 0;
-    font-size: var(--font-size-small);
-}
+    .basket-header .basket-logo .basket-logo-text .item-count {
+        margin-top: 0;
+        font-size: var(--font-size-small);
+    }
 
-.basket-header .order-all-btn {
-    margin-top: 13px;
-    width: 30%;
-    height: 12vw;
-    font-size: 4vw;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--primary-green);
-    color: var(--primary-white);
-}
+    .basket-header .order-all-btn {
+        margin-top: 13px;
+        width: var(--button-width);
+        height: var(--button-height);
+        font-size:var(--button-font-size);
+        border: none;
+        border-radius: 5px;
+        background-color: var(--primary-green);
+        color: var(--primary-white);
+    }
+  /* ============================================= */
 
+/* styling for all types of order components */
 .pre-orders, .pending-orders {
-    margin-inline: 3vw;
+    margin-inline: 8vw;
     max-width: 100%;
     display: grid;
     justify-content: center;
-    gap: 5vw;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: clamp(20px, 4vw, 30px);
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
 }
 
-.pending-header {
-    margin-top: 60px;
-    margin-inline: 9vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
+/* The header specific to the pending orders of the
+    basket page
+  ====================================== */
+    .pending-header {
+        margin-top: 60px;
+        margin-inline: 9vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
 
-.pending-header .pending-header-text h2 {
-    margin-bottom: 0;
-    font-family: var(--font-family-title);
-    font-weight: var(--font-weight-regular);
-}
+    .pending-header .pending-header-text h2 {
+        margin-bottom: 0;
+        font-family: var(--font-family-title);
+        font-weight: var(--font-weight-regular);
+        font-size: var(--font-size-large);
+    }
 
-.pending-header .pending-header-text .item-count {
-    margin-top: 0;
-    font-size: var(--font-size-small);
-}
+    .pending-header .pending-header-text .item-count {
+        margin-top: 0;
+        font-size: var(--font-size-small);
+    }
 
-.pending-header .cancel-all-btn {
-    margin-top: 13px;
-    width: 30%;
-    height: 12vw;
-    font-size: 4vw;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--primary-red);
-    color: var(--primary-white);
-}
+    .pending-header .cancel-all-btn {
+        margin-top: 13px;
+        width: clamp(85px, 30%, 130px);
+        height: var(--button-height);
+        font-size: clamp(14px, 2vw + .5rem, 20px);
+        border: none;
+        border-radius: 5px;
+        background-color: var(--primary-red);
+        color: var(--primary-white);
+    }
+  /* ==================================================== */

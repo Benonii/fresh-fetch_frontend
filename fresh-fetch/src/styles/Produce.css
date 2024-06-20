@@ -5,14 +5,15 @@
 
 :root {
     --font-family-base: 'Inter', Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-    /* --font-size-small: 4vw;
-    --font-size-medium: 15vw;
-    --font-size-large: 9vw; */
     --font-weight-regular: 400;
     --font-weight-bold: 700;
+
+
     --primary-green: #426B1F;
     --primary-black: #000000;
     --primary-white: #FFFFFF;
+
+
     --vendor-color: #6D6D6D;
     --dark-gray: #5C5959;
     --light-gray: #6D6D6D;
@@ -20,76 +21,77 @@
     --border-color: #E6E6E6;
 }
 
-.produce {
-    justify-self: center;
-    background-color: var(--produce-background);
-    max-width: 100%;
-    max-height: 100%;
-    border: 2px solid var(--border-color);
-    border-radius: 20px; 
-}
+/* Produce objects that haven't been ordered and are not in the basket
+  ================================================ */
 
-.produce img {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    margin-bottom: 7px;
-}
+    .produce {
+        justify-self: center;
+        background-color: var(--produce-background);
+        max-width: 100%;
+        border: 2px solid var(--border-color);
+        border-radius: 20px; 
+    }
 
-.produce .produce-info {
-    display: flex;
-    justify-content: space-between;
-}
+    .produce img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-bottom: 7px;
+    }
 
-.produce .produce-info .produce-details {
-    margin: 0 0 5px 5px;
-}
+    .produce .produce-info {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.produce h3 {
-    font-family: var(--font-family-base);
-    font-size: 110%;
-    margin-top: 0;
-}
+    .produce .produce-info .produce-details {
+        margin: 0 0 5px 5px;
+    }
 
-.produce .price-per-pound {
-    color: var(--primary-green);
-    font-family: var(--font-family-base);
-    font-size: 95%;
-    font-weight: var(--font-weight-bold);
-    margin-top: -15px;
-}
+    .produce h3 {
+        font-family: var(--font-family-base);
+        font-size: var(--font-size-medium);
+        margin-top: 0;
+    }
 
-.produce .vendor {
-    color: var(--light-gray);
-    font-family: var(--font-family-base);
-    font-size: 85%;
-}
+    .produce .price-per-pound {
+        color: var(--primary-green);
+        font-family: var(--font-family-base);
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-bold);
+        margin-top: -15px;
+    }
 
-.produce .produce-btns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 7px;
-    margin-right: 10px;
-}
+    .produce .vendor {
+        color: var(--light-gray);
+        font-family: var(--font-family-base);
+        font-size: 85%;
+    }
 
-.produce .produce-btns button {
-    width: 105%;
-    height: 75%;
-    font-size: 80%;
-    border: none;
-    border-radius: 5px;
-}
+    .produce .produce-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 7px;
+        margin-right: 10px;
+    }
 
-.produce .produce-btns .order-now-btn {
-    background-color: var(--primary-green);
-    color: var(--primary-white);
-}
+    .produce .produce-btns button {
+        width: 105%;
+        height: 75%;
+        font-size: 80%;
+        border: none;
+        border-radius: 5px;
+    }
 
-.produce .produce-btns .add-to-basket {
-    background-color: var(--primary-white);
-    color: var(--dark-gray);
-    border: 1px solid var(--primary-black);
-    margin-bottom: 10px;
-}
+    .produce .produce-btns .order-now-btn {
+        background-color: var(--primary-green);
+        color: var(--primary-white);
+    }
 
-
+    .produce .produce-btns .add-to-basket {
+        background-color: var(--primary-white);
+        color: var(--dark-gray);
+        border: 1px solid var(--primary-black);
+        margin-bottom: 10px;
+    }
+  /*=================================================*/

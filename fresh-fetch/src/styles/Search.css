@@ -5,31 +5,35 @@
 
 :root {
     --font-family-base: 'Inter', Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+
     --primary-black: #000000;
     --primary-white: #FFFFFF;
 }
 
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32vw;
-    height: 13vw;
-    background-color: var(--primary-black);
-    text-align: center;
-    border-radius: 10px;
-    border: none;
-}
+/* The search components
+  ========================================== */
 
-.search p {
-    color: var(--primary-white);
-    font-size: 4.2vw;
-    font-family: var(--font-family-base);
-    text-align: center;
-    margin-bottom: 3vw;
-}
+    .search {
+        margin-right: 4vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(80px, 27%, 150px);
+        background-color: var(--primary-black);
+        text-align: center;
+        border-radius: 10px;
+        border: none;
+        padding: 0px 20px;
+    }
 
-.search img {
-    max-width: 40%;
-    max-height: 90%;
-}
+    .search p {
+        color: var(--primary-white);
+        font-size: clamp(14px, 3vw + .3rem, 18px);
+        font-family: var(--font-family-base);
+        text-align: center;
+    }
+
+    .search img {
+        max-width: 45%;
+    }
+  /* ============================================== */

@@ -7,12 +7,15 @@
 :root {
     --font-family-title: 'Newsreader', Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
     --font-family-base: 'Inter', Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-    --font-size: 6vw;
+    --font-size-large: clamp(20px, 2vw + 1rem, 70px);
+
+
     --primary-green: #426B1F;
 
 }
 
+/* Common header */
 .header h1 {
     color: var(--primary-green);
-    font-size: var(--font-size);
+    font-size: var(--font-size-large);
 }

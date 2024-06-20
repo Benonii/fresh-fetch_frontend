@@ -5,6 +5,7 @@ import basketImg from "../images/basket.jpg";
 import "../styles/ProducePage.css";
 
 export default function ProducePage() {
+    // This component displays all the available 
     return (
         <>
             <div className="header-container">
@@ -27,7 +28,7 @@ export default function ProducePage() {
                 
 
                 {/* A few of the available produces */}
-                <div class="produces">
+                <div className="produces">
                     <Produce className="produce"/>
                     <Produce className="produce"/>
                     <Produce classname="produce" />

@@ -6,67 +6,82 @@
 :root {
     --font-family-title: Newsreader, Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
     --font-family-base: 'Inter', Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-    --font-size-small: 1vw;
-    --font-size-medium: 3vw;
-    --font-size-large: 9vw;
+
+    --font-size-large: clamp(20px, 2vw + 1rem, 70px);
+
     --font-weight-regular: 400;
     --font-weight-bold: 700;
+
+
     --primary-green: #426B1F;
     --primary-black: #000000;    
 }
 
-.header-container {
-    max-width: 80vw;
-    margin-right: 0;
-    margin-inline: 9vw;
-    display: flex;
-    justify-content: space-between;
-}
+/* Contains the header component and a button leading to
+    the Basket
+  ===================================== */
 
-.basket-btn {
-    margin-top: 10px;
-    background-color: transparent;
-    border: none;
-}
+    .header-container {
+        max-width: 80vw;
+        margin-inline: 9vw;
+        display: flex;
+        justify-content: space-between;
+    }
 
-.basket-btn p {
-    font-family: var(--font-family-base);
-    font-weight: var(--font-weight-bold);
-    text-align: center;
-    font-size: 4vw;
-    margin: 0;
-}
+    .basket-btn {
+        margin-top: 10px;
+        background-color: transparent;
+        border: none;
+        padding: var(--button-padding);
 
-.basket-btn img {
-    margin: 0;
-    width: 9vw;
-    height: 8vw;
-}
+    }
 
+    .basket-btn p {
+        font-family: var(--font-family-base);
+        font-weight: var(--font-weight-bold);
+        text-align: center;
+        font-size: clamp(15px, 2vw + 0.2rem, 35px);
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .basket-btn img {
+        margin: 0;
+        max-width: 30%;
+    }
+  /*=================================================== */
+
+/* Make sure all images are only as wide as their containers
+   on maximum */
 img {
     max-width: 100%;
 }
 
-.secondary-header {
-    margin-inline: 9vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* The header unique to the Produce page
+    ======================================= */
 
-.secondary-header h2 {
-    font-size: var(--font-size-large);
-    font-family: var(--font-family-title);
-    font-weight: var(--font-weight-regular);
-}
+    .secondary-header {
+        margin-inline: 9vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-hr {
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: #f5efef;
-    width: 75%;
-}
+    .secondary-header h2 {
+        font-size: var(--font-size-large);
+        font-family: var(--font-family-title);
+        font-weight: var(--font-weight-regular);
+    }
 
+    hr {
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #f5efef;
+        width: 75%;
+    }
+  /* ================================================= */
+
+/* Container for all the produce components */
 .produces {
     margin-inline: 3vw;
     max-width: 100%;
