@@ -17,16 +17,17 @@ export default function ProducePage() {
 
             </div>
             <main>
-                {/* This div contains the basket logo,
-                    the orders count and the order all button */}
+                {/* This div contains the produce header and the search,
+                    button */}
                 <div className="secondary-header">
                     <h2>Produce</h2>
                     <Search />
                 </div>
                 <hr />
+                
 
                 {/* A few of the available produces */}
-                <div class="orders">
+                <div class="produces">
                     <Produce className="produce"/>
                     <Produce className="produce"/>
                     <Produce classname="produce" />

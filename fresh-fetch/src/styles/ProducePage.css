@@ -17,6 +17,7 @@
 
 .header-container {
     max-width: 80vw;
+    margin-right: 0;
     margin-inline: 9vw;
     display: flex;
     justify-content: space-between;
@@ -51,11 +52,26 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid red;
 }
 
 .secondary-header h2 {
     font-size: var(--font-size-large);
     font-family: var(--font-family-title);
     font-weight: var(--font-weight-regular);
+}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #f5efef;
+    width: 75%;
+}
+
+.produces {
+    margin-inline: 3vw;
+    max-width: 100%;
+    display: grid;
+    justify-content: center;
+    gap: 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }

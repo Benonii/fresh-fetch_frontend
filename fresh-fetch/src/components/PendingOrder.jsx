@@ -1,10 +1,9 @@
-import tomato from '../images/tomato.jpg';
-import "../styles/Order.css"
-import pencilImg from "../images/pencil.png";
+import tomato from '../images/onion.jpg';
+import "../styles/PendingOrder.css"
 
-export default function Order() {
+export default function PendingOrder() {
     return (
-        <div className="order">
+        <div className="pending-order">
             {/* This image will be repalced by an image we fetch 
                 from the api eventually */}
             <img src={tomato} alt="A Ripe, fresh Heirloom tomato" />
@@ -13,18 +12,17 @@ export default function Order() {
                 from the api */}
             <div className="order-details">
                 <h3 className="order-name">Heirloom Tomato</h3>
-                <p className="price-per-pound">$5.99/lb</p>
+                <p className="price">Price: $5.99/lb</p>
                 <p className="vendor">Vendor: Wall-Mart</p>
                 
                 <div className="order-btns">
-                    <button className="order-now-btn">Order now</button>
-                    <button className="remove-btn">Remove</button>
+                    <button className="confirm-btn">Confirm</button>
+                    <button className="cancel-btn">Cancel</button>
                 </div>
             </div>
 
-            <div className="quantity-input">
-                <input type="text" placeholder="1lb" default="1lb" name="quantity input" />
-                <img src={pencilImg} alt="A penil" />
+            <div className="status">
+                <small>Pending</small>
             </div>
         </div>
     )

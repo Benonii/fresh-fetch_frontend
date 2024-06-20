@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28vw;
+    width: 32vw;
     height: 13vw;
     background-color: var(--primary-black);
     text-align: center;
@@ -23,12 +23,13 @@
 
 .search p {
     color: var(--primary-white);
+    font-size: 4.2vw;
     font-family: var(--font-family-base);
     text-align: center;
     margin-bottom: 3vw;
 }
 
 .search img {
-    max-width: 45%;
+    max-width: 40%;
     max-height: 90%;
 }
