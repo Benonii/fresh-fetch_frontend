@@ -34,7 +34,7 @@
         line-height: 1;
         justify-self: center;
         background-color: var(--order-background);
-        width: clamp(152px, 95%, 750px);
+        width: clamp(152px, 95%, 950px);
         max-height: clamp(105px, 22vw, 150px);
         border: 2px solid var(--border-color);
         border-radius: 20px; 

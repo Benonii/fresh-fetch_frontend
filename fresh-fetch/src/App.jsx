@@ -2,6 +2,7 @@ import ProducePage from './pages/ProducePage';
 import Basket from './pages/Basket';
 import Summary from './pages/Summary'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/produce" element={<ProducePage />} />
           <Route path="/basket" element={<Basket />} />
           <Route path="/summary" element={<Summary />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>
