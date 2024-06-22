@@ -29,7 +29,8 @@ export default function Order({ order, removeOrder }) {
             {/* This is where a user would enter the amount of the particular
                 produce that they want */}
             <div className="quantity-input">
-                <input type="text" placeholder={`${order.quantity}lb`} default="1lb" name="quantity input" />
+                <span id="hiddenLabel">Enter the desired quantity:</span>
+                <input type="text" placeholder={`${order.quantity}lb`} default="1lb" name="quantity input" aria-labelledby='hiddenLabel' />
                 <img src={pencilImg} alt="A pencil" />
             </div>
         </div>
