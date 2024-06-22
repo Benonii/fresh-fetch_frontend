@@ -7,7 +7,7 @@ export default function Produce({ product, addToBasket }) {
         <div className="produce" aria-label='Produce item'>
             {/* This image will eventually be replaced by an image coming from an API */}
             <div className="produce-image">
-                <img src={ product.pic } alt="A Ripe, fresh Heirloom tomato" />
+                <img src={ product.pic } alt="Image of produce" />
             </div>
 
             {/* This data will also be replaced by data from the API. */}
