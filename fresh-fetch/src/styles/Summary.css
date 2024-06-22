@@ -11,7 +11,7 @@
 
     --font-size-large: clamp(20px, 2vw + 1rem, 70px);
     --font-size-samll: clamp(12px, 2vw + .2rem, 22px);
-    --font-size-medium: clamp(12px, 2vw + .2rem, 17px);
+    --font-size-medium: clamp(14px, 2vw + .2rem, 17px);
     --font-size-extra-small: clamp(9px, 1vw + .5rem, 13px);
 
     --font-weight-bold: 700;

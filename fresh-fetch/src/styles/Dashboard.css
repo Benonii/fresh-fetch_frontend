@@ -27,7 +27,7 @@
 
 /* Container for all the orders */
 .all-orders {
-    margin-inline: 8vw;
+    margin-inline: 6vw;
     max-width: 100%;
     display: grid;
     justify-content: center;
