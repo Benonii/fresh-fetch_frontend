@@ -104,14 +104,29 @@
         position: absolute;
         color: var(--status-vendor);
         font-size:var(--font-size-medium);
-        margin-top: 15px;
-        margin-right: 15px;
+        margin-top: 10px;
+        margin-right: 9px;
     }
 
+    .vendor-order .status .Completed {
+        color: var(--primary-green);
+    }
+
+    .vendor-order .status .En-route {
+        color: var(--primary-blue);
+    }
+
+    .vendor-order .status .Pending {
+        color: var(--primary-orange)
+    }
+
+    .vendor-order .status .Cancelled {
+        color: var(--primary-red);
+    }
 
     .quantity {
         font-family: var(--font-family-base);
-        font-size: var(--font-size-samll);
+        font-size: var(--font-size-extra-small);
         font-weight: var(--font-weight-bold);
     }
 

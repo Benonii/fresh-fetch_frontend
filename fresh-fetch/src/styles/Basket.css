@@ -6,8 +6,11 @@
 :root {
     --font-family-base: 'Inter', Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
     --font-family-title: Newsreader, Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+
     --font-size-large: clamp(20px, 2vw + 1rem, 70px);
+    --font-size-medium: clamp(14px, 2vw + .2rem, 17px);
     --font-size-small: clamp(12px, 2vw + .2rem, 22px);
+
     --font-weight-regular: 400;
     --font-weight-bold: 700;
 
@@ -15,11 +18,13 @@
     --primary-green: #426B1F;
     --primary-black: #000000;
     --primary-white: #FFFFFF;
+
     --vendor-color: #6D6D6D; /* The color of the vendor text on eachorder/produce component */
     --dark-gray: #5C5959;
     --light-gray: #6D6D6D;
     --produce-background: #FAFAF5; /* the bg-color for produce components */
     --border-color: #E6E6E6;
+
 
     --button-width: clamp(85px, 30%, 130px); /* The width of the order-all and cancel-all buttons */
     --button-height: clamp(40px, 10vw, 64px); /* The height of the order-all and cancel-all buttons */
@@ -29,6 +34,7 @@
 /* The header specific to the basket page
   ==================================== */
     .basket-header {
+        margin-top: 50px;
         margin-inline: 9vw;
         display: flex;
         align-items: center;
@@ -81,6 +87,11 @@
     gap: clamp(20px, 4vw, 30px);
     grid-template-columns: 1fr;
     margin-bottom: 60px;
+}
+
+.basket-p {
+    text-align: center;
+    font-size: var(--font-size-medium);
 }
 
 /* The header specific to the pending orders of the

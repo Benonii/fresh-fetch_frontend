@@ -8,6 +8,9 @@
     --font-family-base: 'Inter', Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
 
     --font-size-large: clamp(20px, 2vw + 1rem, 70px);
+    --font-size-medium: clamp(14px, 2vw + .2rem, 17px);
+    --font-size-small: clamp(12px, 2vw + .2rem, 22px);
+
 
     --font-weight-regular: 400;
     --font-weight-bold: 700;
@@ -51,6 +54,29 @@
     }
   /*=================================================== */
 
+/** User's profile
+  ================================== */
+  
+    .profile-container {
+        margin-inline: 9vw; 
+        display: flex;
+        width: clamp(195px, 55%, 500px);
+        height: 90px;
+        /* border: 1px solid red; */
+    }
+
+    .proflie-container .user-info {
+        border: 1px solid black;
+    }
+
+    .user-header {
+        font-family: var(--font-family-title);
+        font-weight: 550;
+        font-size: clamp(14px, 4vw, 25px);
+        margin-inline: 10px;
+    }
+
+
 /* Make sure all images are only as wide as their containers
    on maximum */
 img {
@@ -61,6 +87,7 @@ img {
     ======================================= */
 
     .secondary-header {
+        margin-top: 50px;
         margin-inline: 9vw;
         display: flex;
         justify-content: space-between;
@@ -84,6 +111,7 @@ img {
 /* Container for all the produce components */
 .produces {
     margin-inline: 3vw;
+    margin-bottom: 60px;
     max-width: 100%;
     display: grid;
     justify-content: center;

@@ -1,21 +1,108 @@
+// React related imports
+import { useState } from "react";
+import { useNavigate } from "react-router";
+
+// Components
 import Header from "../components/Header";
 import Produce from "../components/Produce";
 import Search from "../components/Search";
-import basketImg from "../images/basket.jpg";
+import Profile from "../components/Profile";
+import Logout from "../components/Logout";
+
+// Styling
 import "../styles/ProducePage.css";
 
+// images
+import basketImg from "../images/basket.jpg";
+import profilePic from "../images/pic-person-01.jpg";
+import tomatoImg from "../images/tomato.jpg";
+import onionImg from "../images/onion.jpg";
+import gingerImg from "../images/ginger.jpg";
+
+
 export default function ProducePage() {
-    // This component displays all the available 
+    // This component displays all the available produces to the user
+    
+    // User state is empty to represent users that are not logged in
+    const [ user, setUser ] = useState({
+        userId: "1",
+        firstName: "Benoni",
+        lastName: "Esckinder",
+        basket: [],
+        profilePic: profilePic,
+    });
+
+    const [ products, setProducts ] = useState([
+        {
+            id: "1",
+            name: "Heirloom Tomato",
+            pricePerPound: "$5.99 / lb",
+            vendor: "Wall-Mart",
+            pic: tomatoImg,
+        },
+        {
+            id: "2",
+            name: "Organic Ginger",
+            pricePerPound: "$12.99 / lb",
+            vendor: "Kmart",
+            pic: gingerImg,
+        },
+        {
+            id: "3",
+            name: "Sweet Onion",
+            pricePerPound: "$2.99 / lb",
+            vendor: "target",
+            pic: onionImg,
+        }
+    ])
+
+    const navigate = useNavigate();
+
+    const goToBasket = () => {
+        navigate('/basket');
+    }
+
+    const addToBasket = (produce) => {
+        setUser((prevState) => ({
+            ...prevState,
+            basket: [
+                ...prevState.basket,
+                produce,
+            ]
+        }))
+    }
+
+    /* Depending on weather the user is logged in or not, this area will either
+       display a login/signup button OR a basket page*/
+    const conditionalComponent = user ? (
+        <div className="basket-container">
+            <button className="basket-btn" onClick={goToBasket}>
+            <p>Basket({user.basket.length})</p>
+            <img src={basketImg} alt="" />
+        </button>
+        </div> 
+    ) : (
+        <div className="user-auth-container">
+            <button className="login">Login</button>
+            <button className="signup">Signup</button>
+        </div>
+    );
+
     return (
         <>
             <div className="header-container">
                 <Header />
                 
-                <button className="basket-btn">
-                    <p>Basket(3)</p>
-                    <img src={basketImg} alt="" />
-                </button>
+            {conditionalComponent}
 
+            </div>
+
+            <div className="profile-container" aria-label="User Profile">
+                <Profile profilePic={user.profilePic} />
+                <div className="user-info">
+                    <h2 className="user-header">Welcome Benoni</h2>
+                    <Logout />
+                </div>
             </div>
             <main>
                 {/* This div contains the produce header and the search,
@@ -29,9 +116,10 @@ export default function ProducePage() {
 
                 {/* A few of the available produces */}
                 <div className="produces">
-                    <Produce className="produce"/>
-                    <Produce className="produce"/>
-                    <Produce classname="produce" />
+                    {products.map((product) => (
+                        <Produce key={product.id} product={product}
+                                 addToBasket={addToBasket} />
+                    ))}
                 </div>
             </main>
         </>
