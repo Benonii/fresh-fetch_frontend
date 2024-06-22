@@ -2,17 +2,8 @@ import gingerImg from "../images/ginger.jpg";
 import '../styles/VendorOrder.css'
 
 export default function VendorOrder({ order }) {
-    const statuses = {
-        completed: "Completed",
-        enRoute: "En-route",
-        pending: "Pending",
-        cancelled: "cancelled",
-    }
-
-    console.log('Order status: ', order.status, statuses.pending, order.status == statuses.pending)
-
     return (
-        <div className="vendor-order">
+        <div className="vendor-order" aria-label="Vendor order">
             {/* This image will be repalced by an image we fetch 
                 from the api eventually */}
             <img src={order.pic} alt="Image of the order" />
@@ -34,7 +25,7 @@ export default function VendorOrder({ order }) {
 
             {/* Instead of ordering or confirming, the vendor has the fulfill
                 button */}
-            {order.status === statuses.pending && (
+            {order.status === "Pending" && (
                 <div className="btn-container">
                     <button className="fulfill-btn">Fulfill</button>
                 </div>

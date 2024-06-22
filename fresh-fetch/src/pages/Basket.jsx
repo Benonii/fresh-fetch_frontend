@@ -20,7 +20,6 @@ export default function Basket() {
 
     const statuses = {
         completed: "Completed",
-        enRoute: "En-route",
         pending: "Pending",
         cancelled: "cancelled",
     }
@@ -74,7 +73,7 @@ export default function Basket() {
                 vendor: "Fresh Corner",
                 quantity: quantity,
                 price: "$14.95",
-                status: statuses.enRoute,
+                status: statuses.pending,
                 pic: onionImg,
             },
             {

@@ -30,7 +30,7 @@ export default function Order({ order, removeOrder }) {
                 produce that they want */}
             <div className="quantity-input">
                 <input type="text" placeholder={`${order.quantity}lb`} default="1lb" name="quantity input" />
-                <img src={pencilImg} alt="A penil" />
+                <img src={pencilImg} alt="A pencil" />
             </div>
         </div>
     )

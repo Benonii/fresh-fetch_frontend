@@ -17,8 +17,8 @@ export default function PendingOrder({ order, cancelOrder }) {
                 from the api */}
             <div className="order-details">
                 <h3 className="order-name">{order.name}</h3>
-                <p className="price">{order.pricePerPound}</p>
-                <p className="quantity">Quantiy: {order.quantity} lbs</p>
+                <p className="price">Price: {order.price}</p>
+                <p className="quantity">Quantity: {order.quantity} lbs</p>
                 <p className="vendor">Vendor: {order.vendor}</p>
                 
                 <div className="order-btns">

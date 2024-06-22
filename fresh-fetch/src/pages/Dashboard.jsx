@@ -13,7 +13,7 @@ export default function Dashboard() {
     const statuses = {
         completed: "Completed",
         enRoute: "En-route",
-        pending: "pending",
+        pending: "Pending",
         cancelled: "cancelled",
     }
 
