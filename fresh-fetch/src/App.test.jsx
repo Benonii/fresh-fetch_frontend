@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import App from './App';
 
-describe('<App /> when user is logged in', () => {
+describe('<App /> when user is not logged in', () => {
   it('renders the Produce page by default', () => {
     render(<App />);
     
@@ -17,28 +17,36 @@ describe('<App /> when user is logged in', () => {
 
   });
 
-  it('renders the Basket button', () => {
+  it('does not render the Basket button when user is not signed in', () => {
     render(<App />);
 
-    expect(screen.getByRole('button', {name: /Basket(.)/}))
-  })
+    expect(screen.queryByRole('button', {name: /Basket(.)/})).toBeNull()
+  });
 
-  it('renders the User profile section', () => {
+  it('Renders the Login and Sign up buttons', () => {
     render(<App />);
 
-    expect(screen.getByLabelText('User Profile')).toBeInTheDocument();
+    expect(screen.getByRole('button', {name: 'Login'})).toBeInTheDocument();
+    expect(screen.getByRole('button', {name: 'Signup'})).toBeInTheDocument();
+  });
+  
+
+  it('does not render the User profile section when user not logged in', () => {
+    render(<App />);
+
+    expect(screen.queryByLabelText('User Profile')).toBeNull();
   }) 
 
-  it('renders the Profile component', () => {
+  it('doesn not renders the Profile component when user not logged in', () => {
     render(<App />);
 
-    expect(screen.getByLabelText('Profile')).toBeInTheDocument();
+    expect(screen.queryByLabelText('Profile')).toBeNull();
   })
 
-  it('renders the logout button', () => {
+  it('does not renders the logout button when user not loggged in', () => {
     render(<App />);
   
-    expect(screen.getByRole('button', {name: 'Logout'})).toBeInTheDocument();
+    expect(screen.queryByRole('button', {name: 'Logout'})).toBeNull();
   })
 
   it('renders the Produce header', () => {
@@ -59,18 +67,18 @@ describe('<App /> when user is logged in', () => {
     expect(screen.getAllByLabelText('Produce item').length).toBeGreaterThanOrEqual(1);
   });
 
-  it('goes to the Basket page when the Basket button is pressed', async () => {
-    render(<App />);
+  // it('goes to the Basket page when the Basket button is pressed', async () => {
+  //   render(<App />);
 
-    const button = screen.getByRole('button', { name: /Basket(.)/})
+  //   const button = screen.getByRole('button', { name: /Basket(.)/})
 
-    act(() => {
-      userEvent.click(button);
-    });
+  //   act(() => {
+  //     userEvent.click(button);
+  //   });
   
-    await expect(window.location.href).toContain('/basket');
+  //   await expect(window.location.href).toContain('/basket');
 
-  })
+  // })
   
   
 });

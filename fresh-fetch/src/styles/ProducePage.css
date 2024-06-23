@@ -17,7 +17,10 @@
 
 
     --primary-green: #426B1F;
-    --primary-black: #000000;    
+    --primary-black: #000000;
+    --primary-white: #FFFFFF;  
+
+    --border-color: #E6E6E6;
 }
 
 /* Contains the header component and a button leading to
@@ -29,6 +32,35 @@
         margin-inline: 9vw;
         display: flex;
         justify-content: space-between;
+    }
+
+    .user-auth-container {
+        margin-top: 10px;
+        display: grid;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 110px;
+    }
+
+    .user-auth-container hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .user-auth-container button {
+        width: clamp(60px, 20vw, 150px);
+        height: clamp(15px, 10vw, 50px);
+        font-size: var(--font-size-small);
+        border: 1px solid var(--border-color);
+        border-radius: 5%;
+        background-color: var(--primary-white);
+        color: var(--primary-black);
+    };
+
+    .user-auth-container .login-btn {
+        background-color: var(--primary-black);
+        color: var(--primary-white);
     }
 
     .basket-btn {

@@ -24,13 +24,14 @@ export default function ProducePage() {
     // This component displays all the available produces to the user
     
     // User state is empty to represent users that are not logged in
-    const [ user, setUser ] = useState({
+    const devUser = {
         userId: "1",
         firstName: "Benoni",
         lastName: "Esckinder",
         basket: [],
         profilePic: profilePic,
-    });
+    };
+    const [ user, setUser ] = useState(null);
 
     const [ products, setProducts ] = useState([
         {
@@ -77,14 +78,15 @@ export default function ProducePage() {
     const conditionalComponent = user ? (
         <div className="basket-container">
             <button className="basket-btn" onClick={goToBasket}>
-            <p>Basket({user.basket.length})</p>
-            <img src={basketImg} alt="" />
-        </button>
+                <p>Basket({user.basket.length})</p>
+                <img src={basketImg} alt="" />
+            </button>
         </div> 
     ) : (
         <div className="user-auth-container">
-            <button className="login">Login</button>
-            <button className="signup">Signup</button>
+            <button className="login-btn">Login</button>
+            <hr />
+            <button className="signup-btn">Signup</button>
         </div>
     );
 
@@ -97,13 +99,16 @@ export default function ProducePage() {
 
             </div>
 
-            <div className="profile-container" aria-label="User Profile">
-                <Profile profilePic={user.profilePic} />
+            {user !== null && (
+                <div className="profile-container" aria-label="User Profile">
+                <Profile profilePic={devUser.profilePic} />
                 <div className="user-info">
                     <h2 className="user-header">Welcome Benoni</h2>
                     <Logout />
                 </div>
             </div>
+            )}
+
             <main>
                 {/* This div contains the produce header and the search,
                     button */}
