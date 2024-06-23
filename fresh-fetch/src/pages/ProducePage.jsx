@@ -63,6 +63,14 @@ export default function ProducePage() {
         navigate('/basket');
     }
 
+    const goToLogin = () => {
+        navigate('/login');
+    }
+
+    const goToSignup = () => {
+        navigate('/signup');
+    }
+
     const addToBasket = (produce) => {
         setUser((prevState) => ({
             ...prevState,
@@ -84,9 +92,9 @@ export default function ProducePage() {
         </div> 
     ) : (
         <div className="user-auth-container">
-            <button className="login-btn">Login</button>
+            <button className="login-btn" onClick={goToLogin}>Login</button>
             <hr />
-            <button className="signup-btn">Signup</button>
+            <button className="signup-btn" onClick={goToSignup}>Signup</button>
         </div>
     );
 
